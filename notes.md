@@ -103,10 +103,10 @@ Here is the start of my notes.
 
 I learned about the basics of Git and how to use it.
 
-'''git add . - Adds all of the files that have any changes to the stage.'''
+```git add . - Adds all of the files that have any changes to the stage.```
 
-'''git commit -m "" - Commits staged changes to be pushed.'''
+```git commit -m "" - Commits staged changes to be pushed.```
 
-'''git push - Pushes local changes to github branch.'''
+```git push - Pushes local changes to github branch.```
 
 I also learned that markdown allows for flexibility when writing things for the github readme.

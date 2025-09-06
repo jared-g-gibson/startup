@@ -97,3 +97,6 @@ Handling the toggling of the checkboxes was particularly interesting.
   ))}
 </div>
 ```
+
+
+Here is the start of my notes. More to be taken in the future.

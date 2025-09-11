@@ -15,13 +15,21 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [ ] A concise and compelling elevator pitch
 - [ ] Description of key features
 - [ ] Description of how you will use each technology
-- [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
+- `[x]` One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
 
 Have you ever wanted to encapsulate a moment in time? With this website, that dream is now a reality! Introducing Capsules, a website that creates a virtual time capsule curated by you. This time capsule will include features such as uploading images/videos, journaling about them, and sharing those capsules with friends. Come be a part of the Capsules team now!
 
 ### Design
+
+#### Rough Sketch of Application
+
+![Page 1](specification_images/page_1.jpg)
+![Page 2](specification_images/page_2.jpg)
+![Page 3](specification_images/page_3.jpg)
+![Page 4](specification_images/page_4.jpg)
+![Page 5](specification_images/page_5.jpg)
 
 ![Design image](placeholder.png)
 
@@ -36,29 +44,24 @@ sequenceDiagram
 
 ### Key features
 
-- There will be a login page.
-- Describe your key feature
-- Describe your key feature
-
-### Rough Draft of Images
-
-![Page 1](specification_images/page_1.jpg)
-![Page 2](specification_images/page_2.jpg)
-![Page 3](specification_images/page_3.jpg)
-![Page 4](specification_images/page_4.jpg)
-![Page 5](specification_images/page_5.jpg)
+- There will be a login page. From the login page you will be able to create your account.
+- Once you are logged in, you will be at the home page. The home page will lead to the View Capsules Page, Create Capsule Page, and Social Page.
+- View Capsules Page views current capsules.
+- Create Capsule Page creates a new capsule.
+- Social Page allows you to connect with friends and collaborate on capsules.
+- At any time, you can logout of your account.
 
 
 ### Technologies
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - HTML will be used to create the main structure of the application. There will be 5 main pages, with possibly more added in the future. 5 main pages are disucssed in Key Features. 
+- **CSS** - CSS will be used to apply styling to create consistent, professional feel amongs the main pages. It will also look good on any screen the website is rendered on.
+- **React** - React will be used to handle the components of the website. Provides the logic of which components to display at what time.
+- **Service** - Backend Service will have endpoints for logging in, accessing capsule database, creating capsules, adding friends, and seeing friends lists. A third party service will be used to display a random fact about the day you are logging in on (September 10).
+- **DB/Login** - Stores the users and their credentials in a database. Database will also store the capsule information for each user.
+- **WebSocket** - Websocket will allow users to connect with other users and become "friends" on the website. The friend requests will be broadcasted to other users.
 
 ## 🚀 AWS deliverable
 

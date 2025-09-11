@@ -1,15 +1,8 @@
-# Rose Park Clinic
+# Capsules
 
 [My Notes](notes.md)
 
-I am planning on creating a website that the University of Utah Health people can use in the future. I want to be able to talk about it on my medical school application. A brief description of the application here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
-> [!NOTE]
->  This is a template for your startup application. You must modify this `README.md` file for each phase of your development. You only need to fill in the section for each deliverable when that deliverable is submitted in Canvas. Without completing the section for a deliverable, the TA will not know what to look for when grading your submission. Feel free to add additional information to each deliverable description, but make sure you at least have the list of rubric items and a description of what you did for each item.
-
-> [!NOTE]
->  If you are not familiar with Markdown then you should review the [documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) before continuing.
+I am planning on creating a website that functions as a digital time capsule. There will be opportunities to share the capsules you create with friends and family.
 
 ## 🚀 Specification Deliverable
 
@@ -18,7 +11,7 @@ I am planning on creating a website that the University of Utah Health people ca
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] Proper use of Markdown
+- `[x]` Proper use of Markdown
 - [ ] A concise and compelling elevator pitch
 - [ ] Description of key features
 - [ ] Description of how you will use each technology
@@ -26,7 +19,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 ### Elevator pitch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Have you ever wanted to encapsulate a moment in time? With this website, that dream is now a reality! Introducing Capsules, a website that creates a virtual time capsule curated by you. This time capsule will include features such as uploading images/videos, journaling about them, and sharing those capsules with friends. Come be a part of the Capsules team now!
 
 ### Design
 
@@ -43,9 +36,18 @@ sequenceDiagram
 
 ### Key features
 
+- There will be a login page.
 - Describe your key feature
 - Describe your key feature
-- Describe your key feature
+
+### Rough Draft of Images
+
+![Page 1](specification_images/page_1.jpg)
+![Page 2](specification_images/page_2.jpg)
+![Page 3](specification_images/page_3.jpg)
+![Page 4](specification_images/page_4.jpg)
+![Page 5](specification_images/page_5.jpg)
+
 
 ### Technologies
 

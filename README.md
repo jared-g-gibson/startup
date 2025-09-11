@@ -31,16 +31,7 @@ Have you ever wanted to encapsulate a moment in time? With this website, that dr
 ![Page 4](specification_images/page_4.jpg)
 ![Page 5](specification_images/page_5.jpg)
 
-![Design image](placeholder.png)
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-```mermaid
-sequenceDiagram
-    actor You
-    actor Website
-    You->>Website: Replace this with your design
-```
+Here is a rough sketch of my application. Each page represents a different page of the website.
 
 ### Key features
 

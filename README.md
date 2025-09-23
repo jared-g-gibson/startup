@@ -64,7 +64,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **HTML pages** - I did not complete this part of the deliverable.
+- `[x]` **HTML pages** - I created a page for each step of the website. collaborate.html (social function of app), create_account (create an account), create_capsules.html (create capsule), index.html (login), post_login (home page after logging in), view_capsules (view current capsules)
 - [ ] **Proper HTML element usage** - I did not complete this part of the deliverable.
 - [ ] **Links** - I did not complete this part of the deliverable.
 - [ ] **Text** - I did not complete this part of the deliverable.

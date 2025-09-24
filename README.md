@@ -71,8 +71,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - `[x]` **3rd party API placeholder** - I have a placeholder on the login (index.html) page.
 - `[x]` **Images** - I have an image on the login page.
 - `[x]` **Login placeholder** - I have a placeholder for login and logout on the website. I also have a placeholder for creating an account.
-- [ ] **DB data placeholder** - I did not complete this part of the deliverable.
-- [ ] **WebSocket placeholder** - I did not complete this part of the deliverable.
+- `[x]` **DB data placeholder** - I created placeholders for adding to database and reading from database in create_capsules.html and view_capsules.html.
+- `[x]`  **WebSocket placeholder** - I put a placeholder for the websocket interaction in the social page.
 
 ## 🚀 CSS deliverable
 

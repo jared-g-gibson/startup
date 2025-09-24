@@ -98,6 +98,7 @@ Handling the toggling of the checkboxes was particularly interesting.
 </div>
 ```
 
+IP Address is located at: http://34.234.179.165
 
 Here is the start of my notes.
 

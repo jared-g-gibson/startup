@@ -65,12 +65,12 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
 - `[x]` **HTML pages** - I created a page for each step of the website. collaborate.html (social function of app), create_account (create an account), create_capsules.html (create capsule), index.html (login), post_login (home page after logging in), view_capsules (view current capsules)
-- [ ] **Proper HTML element usage** - I did not complete this part of the deliverable.
-- [ ] **Links** - I did not complete this part of the deliverable.
-- [ ] **Text** - I did not complete this part of the deliverable.
-- [ ] **3rd party API placeholder** - I did not complete this part of the deliverable.
-- [ ] **Images** - I did not complete this part of the deliverable.
-- [ ] **Login placeholder** - I did not complete this part of the deliverable.
+- `[x]` **Proper HTML element usage** - I created many HTML pages that I hope to finish throughout the semester.s
+- `[x]` **Links** - The pages link to each other to make an interconnected webpage. I also linked my Github at the footer of each page.
+- `[x]` **Text** - There is a bunch of text throughout my HTML pages.
+- `[x]` **3rd party API placeholder** - I have a placeholder on the login (index.html) page.
+- `[x]` **Images** - I have an image on the login page.
+- `[x]` **Login placeholder** - I have a placeholder for login and logout on the website. I also have a placeholder for creating an account.
 - [ ] **DB data placeholder** - I did not complete this part of the deliverable.
 - [ ] **WebSocket placeholder** - I did not complete this part of the deliverable.
 

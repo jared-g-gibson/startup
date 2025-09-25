@@ -2,51 +2,60 @@
 
 <html lang="eng">
     <head>
-        <h1>My Vault</h1>
-        <!--This will be prettier with CSS on the top right like traditional logouts/navigations.-->
-        <ul>
-            <li><a href="post_login.html">Home Page</a></li>
-            <li><a href="../index.html">Logout</a></li>
-        </ul>
-        <hr />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Create Capsule</title>
     </head>
+
     <body>
-        <h2>Create a Capsule!</h2>
-        <!--The information entered here will be entered into a database-->
-        <form>
-            <div>
-                <input type="text" placeholder="Enter Title of Experience Here" size="50"/>
+        <header>
+            <h1>My Vault</h1>
+            <!--This will be prettier with CSS on the top right like traditional logouts/navigations.-->
+            <ul>
+                <li><a href="post_login.html">Home Page</a></li>
+                <li><a href="../index.html">Logout</a></li>
+            </ul>
+            <hr />
+        </header>
+        <main>
+            <h2>Create a Capsule!</h2>
+            <!--The information entered here will be entered into a database-->
+            <form>
+                <div>
+                    <input type="text" placeholder="Enter Title of Experience Here" size="50"/>
+                </div>
+                <br>
+                <div>
+                    <input type="text" placeholder="Journal about Experience Here" size="50"/>
+                </div>
+                <br>
+                <div>
+                    <p>Insert any pictures here: </p><input type="file" />
+                </div>
+                <br>
+                <div>
+                    <p>Enter date this capsule will open: </p><input type="date">
+                </div>
+                <br>
+                <div>
+                    <input type="submit" />
+                </div>
+            </form>
+        </main>
+
+        <footer>
+            <hr />
+            <div class="credits">
+                <p class="author">
+                    Author: Jared Gibson
+                </p>
+                <p class="github">
+                    <a href="https://github.com/jared-g-gibson/startup">Github Repository</a>
+                </p>
+                <p>
+                    <a href="info.html">Information</a>
+                </p>
             </div>
-            <br>
-            <div>
-                <input type="text" placeholder="Journal about Experience Here" size="50"/>
-            </div>
-            <br>
-            <div>
-                <p>Insert any pictures here: </p><input type="file" />
-            </div>
-            <br>
-            <div>
-                <p>Enter date this capsule will open: </p><input type="date">
-            </div>
-            <br>
-            <div>
-                <input type="submit" />
-            </div>
-        </form>
+        </footer>
     </body>
-    <footer>
-        <hr />
-        <div class="credits">
-            <p class="author">
-                Author: Jared Gibson
-            </p>
-            <p class="github">
-                <a href="https://github.com/jared-g-gibson/startup">Github Repository</a>
-            </p>
-            <p>
-                <a href="info.html">Information</a>
-            </p>
-        </div>
-    </footer>
 </html>

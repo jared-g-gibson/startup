@@ -2,44 +2,53 @@
 
 <html lang="eng">
     <head>
-        <h1>My Vault</h1>
-        <hr />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Create Account</title>
     </head>
+
     <body>
-        <h2>Create an Account</h2>
-        <!--On submit, return to the login page.-->
-        <form>
-            <!--Name-->
-            <div>
-                <span>Name: </span>
-                <input type="text" placeholder="name"/>
+        <header>
+            <h1>My Vault</h1>
+            <hr />
+        </header>
+
+        <main>
+            <h2>Create an Account</h2>
+            <!--On submit, return to the login page.-->
+            <form>
+                <!--Name-->
+                <div>
+                    <span>Name: </span>
+                    <input type="text" placeholder="name"/>
+                </div>
+                <!--Username-->
+                <div>
+                    <span>Username:</span>
+                    <input type="text" placeholder="username" />
+                </div>
+                <!--Password-->
+                <div>
+                    <span>Password:</span>
+                    <input type="password" placeholder="password" />
+                </div>
+                <button type="Create Account">Login</button>
+            </form>
+            <p>Return to <a href="../index.html">login</a> page.</p>
+        </main>
+        <footer>
+            <hr />
+            <div class="credits">
+                <p class="author">
+                    Author: Jared Gibson
+                </p>
+                <p class="github">
+                    <a href="https://github.com/jared-g-gibson/startup">Github Repository</a>
+                </p>
+                <p>
+                    <a href="info.html">Information</a>
+                </p>
             </div>
-            <!--Username-->
-            <div>
-                <span>Username:</span>
-                <input type="text" placeholder="username" />
-            </div>
-            <!--Password-->
-            <div>
-                <span>Password:</span>
-                <input type="password" placeholder="password" />
-            </div>
-            <button type="Create Account">Login</button>
-        </form>
+        </footer>
     </body>
-    <p>Return to <a href="../index.html">login</a> page.</p>
-    <footer>
-        <hr />
-        <div class="credits">
-            <p class="author">
-                Author: Jared Gibson
-            </p>
-            <p class="github">
-                <a href="https://github.com/jared-g-gibson/startup">Github Repository</a>
-            </p>
-            <p>
-                <a href="info.html">Information</a>
-            </p>
-        </div>
-    </footer>
 </html>

@@ -2,48 +2,58 @@
 
 <html lang="eng">
     <head>
-        <h1>My Vault</h1>
-        <!--This will be prettier with CSS on the top right like traditional logouts/navigations.-->
-        <ul>
-            <li><a href="post_login.html">Home Page</a></li>
-            <li><a href="../index.html">Logout</a></li>
-        </ul>
-        <hr />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>View Capsules</title>
     </head>
+
     <body>
-        <h2>View Your Current Capsules Here!</h2>
-        <!--This will call to the database-->
-        <table>
-            <tr>
-                <th>Capsule Name</th>
-                <th>Opening Date</th>
-            </tr>
-            <tr>
-                <td>Italy Trip</td>
-                <td>December 1, 2026</td>
-            </tr>
-            <tr>
-                <td>Temple Time</td>
-                <td>June 9, 2026</td>
-            </tr>
-            <tr>
-                <td><a href="under_construction.html">Mission Photos</a></td>
-                <td>September 1, 2025</td>
-            </tr>
-        </table>
+        <header>
+            <h1>My Vault</h1>
+            <!--This will be prettier with CSS on the top right like traditional logouts/navigations.-->
+            <ul>
+                <li><a href="post_login.html">Home Page</a></li>
+                <li><a href="../index.html">Logout</a></li>
+            </ul>
+            <hr />
+        </header>
+        
+        <main>
+            <h2>View Your Current Capsules Here!</h2>
+            <!--This will call to the database-->
+            <table>
+                <tr>
+                    <th>Capsule Name</th>
+                    <th>Opening Date</th>
+                </tr>
+                <tr>
+                    <td>Italy Trip</td>
+                    <td>December 1, 2026</td>
+                </tr>
+                <tr>
+                    <td>Temple Time</td>
+                    <td>June 9, 2026</td>
+                </tr>
+                <tr>
+                    <td><a href="under_construction.html">Mission Photos</a></td>
+                    <td>September 1, 2025</td>
+                </tr>
+            </table>
+        </main>
+
+        <footer>
+            <hr />
+            <div class="credits">
+                <p class="author">
+                    Author: Jared Gibson
+                </p>
+                <p class="github">
+                    <a href="https://github.com/jared-g-gibson/startup">Github Repository</a>
+                </p>
+                <p>
+                    <a href="info.html">Information</a>
+                </p>
+            </div>
+        </footer>
     </body>
-    <footer>
-        <hr />
-        <div class="credits">
-            <p class="author">
-                Author: Jared Gibson
-            </p>
-            <p class="github">
-                <a href="https://github.com/jared-g-gibson/startup">Github Repository</a>
-            </p>
-            <p>
-                <a href="info.html">Information</a>
-            </p>
-        </div>
-    </footer>
 </html>

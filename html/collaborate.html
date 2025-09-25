@@ -2,41 +2,50 @@
 
 <html lang="eng">
     <head>
-        <h1>My Vault</h1>
-        <!--This will be prettier with CSS on the top right like traditional logouts/navigations.-->
-        <ul>
-            <li><a href="post_login.html">Home Page</a></li>
-            <li><a href="../index.html">Logout</a></li>
-        </ul>
-        <hr />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Collaborate</title>
     </head>
     <body>
-        <!--This is a websocket interaction-->
-        <h2>Social Page</h2>
-        <form>
-            <p>Connect with friend: 
-                <input type="text" placeholder="Type their name here"/> 
-                <input type="submit"/></p>        
-        </form>
-        <!--Updates via websocket-->
-        <p>View friend requests:</p>
-        <p>Jake</p>
-        <br>
-        <p>View friend's capsules:</p>
-        <p><a href="under_construction.html">Eli's Trip</a></p>
+        <header>
+            <h1>My Vault</h1>
+            <!--This will be prettier with CSS on the top right like traditional logouts/navigations.-->
+            <ul>
+                <li><a href="post_login.html">Home Page</a></li>
+                <li><a href="../index.html">Logout</a></li>
+            </ul>
+            <hr />
+        </header>
+
+        <main>
+            <!--This is a websocket interaction-->
+            <h2>Social Page</h2>
+            <form>
+                <p>Connect with friend: 
+                    <input type="text" placeholder="Type their name here"/> 
+                    <input type="submit"/></p>        
+            </form>
+            <!--Updates via websocket-->
+            <p>View friend requests:</p>
+            <p>Jake</p>
+            <br>
+            <p>View friend's capsules:</p>
+            <p><a href="under_construction.html">Eli's Trip</a></p>
+        </main>
+
+        <footer>
+            <hr />
+            <div class="credits">
+                <p class="author">
+                    Author: Jared Gibson
+                </p>
+                <p class="github">
+                    <a href="https://github.com/jared-g-gibson/startup">Github Repository</a>
+                </p>
+                <p>
+                    <a href="info.html">Information</a>
+                </p>
+            </div>
+        </footer>
     </body>
-    <footer>
-        <hr />
-        <div class="credits">
-            <p class="author">
-                Author: Jared Gibson
-            </p>
-            <p class="github">
-                <a href="https://github.com/jared-g-gibson/startup">Github Repository</a>
-            </p>
-            <p>
-                <a href="info.html">Information</a>
-            </p>
-        </div>
-    </footer>
 </html>

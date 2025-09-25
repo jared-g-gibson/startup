@@ -1,50 +1,57 @@
 <!DOCTYPE html>
 
-<html lang="eng">
+<html lang="en">
     <head>
-        <h1>My Vault</h1>
-        <!--Post login page. This will disappear in the future once the login functionality works.-->
-        <a href="html/post_login.html">Post Login Page</a>
-        <hr />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Vault of Time</title>
     </head>
     <body>
-        <h2>Welcome to My Vault of Time</h2>
-        <p>Login to view your Vault</p>
-        <form>
-            <!--Username-->
+        <header>
+            <h1>My Vault</h1>
+            <!--Post login page. This will disappear in the future once the login functionality works.-->
+            <a href="html/post_login.html">Post Login Page</a>
+            <hr />
+        </header>
+        <main>
+            <h2>Welcome to My Vault of Time</h2>
+            <p>Login to view your Vault</p>
+            <form>
+                <!--Username-->
+                <div>
+                    <span>Username:</span>
+                    <input type="text" placeholder="username" />
+                </div>
+                <!--Password-->
+                <div>
+                    <span>Password:</span>
+                    <input type="password" placeholder="password" />
+                </div>
+                <button type="submit">Login</button>
+            </form>
+
+            <p>Click <a href="html/create_account.html">here</a> to create an account</p>
+
+            <h4>On this day, an interesting thing happened. This is where an api will go</h4>
+            <img src = "https://images.pexels.com/photos/1095601/pexels-photo-1095601.jpeg" width="500" />
+
             <div>
-                <span>Username:</span>
-                <input type="text" placeholder="username" />
+                <a href="html/post_login.html">Home Page</a>
             </div>
-            <!--Password-->
-            <div>
-                <span>Password:</span>
-                <input type="password" placeholder="password" />
+        </main>
+        <footer>
+            <hr />
+            <div class="credits">
+                <p class="author">
+                    Author: Jared Gibson
+                </p>
+                <p class="github">
+                    <a href="https://github.com/jared-g-gibson/startup">Github Repository</a>
+                </p>
+                <p>
+                    <a href="html/info.html">Information</a>
+                </p>
             </div>
-            <button type="submit">Login</button>
-        </form>
-
-        <p>Click <a href="html/create_account.html">here</a> to create an account</p>
-
-        <h4>On this day, an interesting thing happened. This is where an api will go</h4>
-        <img src = "https://images.pexels.com/photos/1095601/pexels-photo-1095601.jpeg" width="500" />
-
-        <div>
-            <a href="html/post_login.html">Home Page</a>
-        </div>
+        </footer>
     </body>
-    <footer>
-        <hr />
-        <div class="credits">
-            <p class="author">
-                Author: Jared Gibson
-            </p>
-            <p class="github">
-                <a href="https://github.com/jared-g-gibson/startup">Github Repository</a>
-            </p>
-            <p>
-                <a href="html/info.html">Information</a>
-            </p>
-        </div>
-    </footer>
 </html>

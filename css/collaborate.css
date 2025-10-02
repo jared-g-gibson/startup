@@ -59,3 +59,7 @@ li {
         flex: 1 100vh;
     }
 }
+
+.text {
+    color: navy;
+}

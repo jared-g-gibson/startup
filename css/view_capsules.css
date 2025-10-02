@@ -61,18 +61,9 @@ li {
 }
 
 .text {
-    color: navy;
+    color: #000080;
 }
 
-.my-list {
-    list-style: none;
-}
-
-.lists {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-.linker {
-    font-size: 30px;
+th, td {
+    padding: 15px;
 }

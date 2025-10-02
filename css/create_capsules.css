@@ -20,6 +20,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color:#F5F5DC;
 }
 
@@ -61,18 +62,5 @@ li {
 }
 
 .text {
-    color: navy;
-}
-
-.my-list {
-    list-style: none;
-}
-
-.lists {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-.linker {
-    font-size: 30px;
+    color: #000080;
 }

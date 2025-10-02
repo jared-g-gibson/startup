@@ -11,11 +11,11 @@ I am planning on creating a website that functions as a digital time capsule. Th
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- `[x]` Proper use of Markdown
-- `[x]` A concise and compelling elevator pitch
-- `[x]` Description of key features
-- `[x]` Description of how you will use each technology
-- `[x]` One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
+- [x] Proper use of Markdown
+- [x] A concise and compelling elevator pitch
+- [x] Description of key features
+- [x] Description of how you will use each technology
+- [x] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
 
@@ -58,32 +58,32 @@ I am going to use the required technologies in the following ways.
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Server deployed and accessible with custom domain name** - [My server link](https://yourdomainnamehere.click).
+- [x] **Server deployed and accessible with custom domain name** - [My server link](https://yourdomainnamehere.click).
 
 ## 🚀 HTML deliverable
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- `[x]` **HTML pages** - I created a page for each step of the website. collaborate.html (social function of app), create_account (create an account), create_capsules.html (create capsule), index.html (login), post_login (home page after logging in), view_capsules (view current capsules)
-- `[x]` **Proper HTML element usage** - I created many HTML pages that I hope to finish throughout the semester.s
-- `[x]` **Links** - The pages link to each other to make an interconnected webpage. I also linked my Github at the footer of each page.
-- `[x]` **Text** - There is a bunch of text throughout my HTML pages.
-- `[x]` **3rd party API placeholder** - I have a placeholder on the login (index.html) page.
-- `[x]` **Images** - I have an image on the login page.
-- `[x]` **Login placeholder** - I have a placeholder for login and logout on the website. I also have a placeholder for creating an account.
-- `[x]` **DB data placeholder** - I created placeholders for adding to database and reading from database in create_capsules.html and view_capsules.html.
-- `[x]`  **WebSocket placeholder** - I put a placeholder for the websocket interaction in the social page.
+- [x] **HTML pages** - I created a page for each step of the website. collaborate.html (social function of app), create_account (create an account), create_capsules.html (create capsule), index.html (login), post_login (home page after logging in), view_capsules (view current capsules)
+- [x] **Proper HTML element usage** - I created many HTML pages that I hope to finish throughout the semester.s
+- [x] **Links** - The pages link to each other to make an interconnected webpage. I also linked my Github at the footer of each page.
+- [x] **Text** - There is a bunch of text throughout my HTML pages.
+- [x] **3rd party API placeholder** - I have a placeholder on the login (index.html) page.
+- [x] **Images** - I have an image on the login page.
+- [x] **Login placeholder** - I have a placeholder for login and logout on the website. I also have a placeholder for creating an account.
+- [x] **DB data placeholder** - I created placeholders for adding to database and reading from database in create_capsules.html and view_capsules.html.
+- [x]  **WebSocket placeholder** - I put a placeholder for the websocket interaction in the social page.
 
 ## 🚀 CSS deliverable
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- `[x]`  **Header, footer, and main content body** - I added styling to the header, footer, and main that gave each page the same look and feel.
-- `[x]`  **Navigation elements** - I changed some of the links to have a different color.
-- `[x]`  **Responsive to window resizing** - The website is responsive to window resizing.
-- `[x]`  **Application elements** - Application is properly styled.
-- `[x]` **Application text content** - Changed text color in main to navy blue instead of black.
-- `[x]`  **Application images** - There are images on my application.
+- [x]  **Header, footer, and main content body** - I added styling to the header, footer, and main that gave each page the same look and feel.
+- [x]  **Navigation elements** - I changed some of the links to have a different color.
+- [x]  **Responsive to window resizing** - The website is responsive to window resizing.
+- [x]  **Application elements** - Application is properly styled.
+- [x] **Application text content** - Changed text color in main to navy blue instead of black.
+- [x]  **Application images** - There are images on my application.
 
 ## 🚀 React part 1: Routing deliverable
 

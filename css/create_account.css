@@ -73,3 +73,7 @@ li {
     flex-direction: column;
     align-self: center;
 }
+
+.text {
+    color: navy;
+}

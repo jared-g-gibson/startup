@@ -78,12 +78,12 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Header, footer, and main content body** - I did not complete this part of the deliverable.
-- [ ] **Navigation elements** - I did not complete this part of the deliverable.
-- [ ] **Responsive to window resizing** - I did not complete this part of the deliverable.
-- [ ] **Application elements** - I did not complete this part of the deliverable.
-- [ ] **Application text content** - I did not complete this part of the deliverable.
-- [ ] **Application images** - I did not complete this part of the deliverable.
+- `[x]`  **Header, footer, and main content body** - I added styling to the header, footer, and main that gave each page the same look and feel.
+- `[x]`  **Navigation elements** - I changed some of the links to have a different color.
+- `[x]`  **Responsive to window resizing** - The website is responsive to window resizing.
+- `[x]`  **Application elements** - Application is properly styled.
+- `[x]` **Application text content** - Changed text color in main to navy blue instead of black.
+- `[x]`  **Application images** - There are images on my application.
 
 ## 🚀 React part 1: Routing deliverable
 

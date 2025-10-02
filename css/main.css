@@ -36,6 +36,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color:#F5F5DC;
 }
 
@@ -74,4 +75,8 @@ li {
 .navbar-nav {
     display: flex;
     flex-wrap: nowrap;
+}
+
+.text {
+    color: navy;
 }

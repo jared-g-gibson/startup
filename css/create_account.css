@@ -6,39 +6,47 @@
 body {
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
- header {
+header {
     flex: 0 80px;
     flex-direction: row;
     background-color: #6A8CA1;
 }
 
-.post-login {
-    color: blanchedalmond;
-    flex-direction: row;
-}
-
-header a {
-    float: right;
+main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    background-color:#F5F5DC;
+    justify-content: center;
 }
 
 footer {
     display: flex;
     flex-direction: row;
     background-color: #6A8CA1;
-}
-
-main {
-    flex: 1 calc(100vh - 120px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color:#F5F5DC;
+    flex-wrap: nowrap;
 }
 
 li {
     padding: 0 0.5em;
+}
+
+.custom-bg {
+    background-color: #6A8CA1;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.menu {
+    color: blanchedalmond;
 }
 
 @media (max-height: 800px) {
@@ -53,16 +61,15 @@ li {
     }
 }
 
-.custom-bg {
-    background-color: #6A8CA1;
-}
-
 .login-prompt {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn {
+    display: flex;
     flex-direction: column;
     align-self: center;
 }

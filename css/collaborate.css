@@ -9,26 +9,10 @@ body {
     height: 100vh;
 }
 
- header {
+header {
     flex: 0 80px;
     flex-direction: row;
     background-color: #6A8CA1;
-}
-
-.post-login {
-    color: blanchedalmond;
-    flex-direction: row;
-}
-
-header a {
-    float: right;
-}
-
-footer {
-    display: flex;
-    flex-direction: row;
-    background-color: #6A8CA1;
-    flex-wrap: nowrap;
 }
 
 main {
@@ -39,8 +23,19 @@ main {
     background-color:#F5F5DC;
 }
 
+footer {
+    display: flex;
+    flex-direction: row;
+    background-color: #6A8CA1;
+    flex-wrap: nowrap;
+}
+
 li {
     padding: 0 0.5em;
+}
+
+.custom-bg {
+    background-color: #6A8CA1;
 }
 
 @media (max-height: 800px) {
@@ -53,25 +48,4 @@ li {
     main {
         flex: 1 100vh;
     }
-}
-
-.custom-bg {
-    background-color: #6A8CA1;
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.login-prompt {
-    display: flex;
-    flex-direction: column;
-}
-
-.btn {
-    flex-direction: column;
-    align-self: center;
-}
-
-.navbar-nav {
-    display: flex;
-    flex-wrap: nowrap;
 }

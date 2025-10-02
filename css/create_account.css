@@ -6,7 +6,6 @@
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
 }
 
  header {
@@ -28,11 +27,10 @@ footer {
     display: flex;
     flex-direction: row;
     background-color: #6A8CA1;
-    flex-wrap: nowrap;
 }
 
 main {
-    flex: 1;
+    flex: 1 calc(100vh - 120px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,8 +55,6 @@ li {
 
 .custom-bg {
     background-color: #6A8CA1;
-    display: flex;
-    flex-wrap: nowrap;
 }
 
 .login-prompt {
@@ -69,9 +65,4 @@ li {
 .btn {
     flex-direction: column;
     align-self: center;
-}
-
-.navbar-nav {
-    display: flex;
-    flex-wrap: nowrap;
 }

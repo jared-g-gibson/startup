@@ -3,27 +3,66 @@
     box-sizing: border-box;
 }
 
-html {
-    min-height: 100%;
+body {
+    display: flex;
+    flex-direction: column;
 }
 
  header {
     flex: 0 80px;
-    flex-direction: row;;
+    flex-direction: row;
+    background-color: #6A8CA1;
 }
 
-footer {
-    flex: 0 30px;
+.post-login {
+    color: blanchedalmond;
     flex-direction: row;
 }
 
+header a {
+    float: right;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    background-color: #6A8CA1;
+}
+
 main {
+    flex: 1 calc(100vh - 120px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1
+    background-color:#F5F5DC;
 }
 
 li {
     padding: 0 0.5em;
+}
+
+@media (max-height: 800px) {
+    header {
+        display: none;
+    }
+    footer {
+        display: none;
+    }
+    main {
+        flex: 1 100vh;
+    }
+}
+
+.custom-bg {
+    background-color: #6A8CA1;
+}
+
+.login-prompt {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    flex-direction: column;
+    align-self: center;
 }

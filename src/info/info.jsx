@@ -1,4 +1,6 @@
 import React from 'react';
+import './info.css';
+
 
 export function Info() {
   return (

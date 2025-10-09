@@ -1,4 +1,5 @@
 import React from 'react';
+import './create_capsules.css';
 
 export function CreateCapsules() {
   return (

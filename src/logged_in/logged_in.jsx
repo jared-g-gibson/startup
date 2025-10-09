@@ -9,10 +9,10 @@ export function LoggedIn() {
             <NavLink className="navbar-brand" href="/">My Vault of Time</NavLink>
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <NavLink className="menu" href="/">Home Page</NavLink>
+                    <NavLink className="menu" href="/post_login">Home Page</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="menu" href="/post_login">Logout Page</NavLink>
+                    <NavLink className="menu" href="/">Logout Page</NavLink>
                 </li>
             </ul>
         </nav>

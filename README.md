@@ -91,7 +91,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 - [x] **Bundled using Vite** - I used vite to bundle everything.
 - [x] **Components** - I created a component for each web page.
-- [x] **Router** - I created a router that routes to each page.
+- [x] **Router** - I created a router that routes to each page. I created another router handling whether the user is logged in or not.
 
 ## 🚀 React part 2: Reactivity deliverable
 

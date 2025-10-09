@@ -2,8 +2,9 @@ import React from 'react';
 
 export function Info() {
   return (
-    <main className="container-fluid bg-secondary text-center">
-      <div>info displayed here</div>
+    <main>
+        <h1 className="text">Information</h1>
+        <p className="text">This website is a website to store digital time capsules.</p>
     </main>
   );
 }

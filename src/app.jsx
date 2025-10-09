@@ -11,24 +11,39 @@ import { Login } from './login/login'
 import { PostLogin } from './post_login/post_login';
 import { UnderConstruction } from './under_construction/under_construction';
 import { ViewCapsules } from './view_capsules/view_capsules';
+import { LoggedIn } from './logged_in/logged_in';
+import { LoggedOut } from './logged_out/logged_out';
 
 export default function App() {
   return (
     <BrowserRouter>
         <div className="app">
-            <header className="container-fluid">
+            {/* <header className="container-fluid">
                 <nav className="navbar navbar-expand-lg navbar-light custom-bg">
                     <NavLink className="navbar-brand" to="/">My Vault of Time</NavLink>
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <NavLink className="menu" to="post_login">Home Page</NavLink>
+                            <NavLink className="menu" to="/">Home Page</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="menu" to="/">Logout Page</NavLink>
+                            <NavLink className="menu" to="/post_login">Logout Page</NavLink>
                         </li>
                     </ul>
                 </nav>
-            </header>
+            </header> */}
+
+            <Routes>
+                <Route path='/' element={<LoggedOut />} exact />
+                <Route path='/collaborate' element={<LoggedIn />} />
+                <Route path='/create_account' element={<LoggedOut />} />
+                <Route path='/create_capsules' element={<LoggedIn />} />
+                <Route path='/info' element={<LoggedOut />} />
+                <Route path='/login' element={<LoggedOut />} />
+                <Route path='/post_login' element={<LoggedIn />} />
+                <Route path='/under_construction' element={<LoggedIn />} />
+                <Route path='/view_capsules' element={<LoggedIn />} />
+                <Route path='*' element={<LoggedOut />} />
+            </Routes>
 
             <Routes>
                 <Route path='/' element={<Login />} exact />
@@ -36,6 +51,7 @@ export default function App() {
                 <Route path='/create_account' element={<CreateAccount />} />
                 <Route path='/create_capsules' element={<CreateCapsules />} />
                 <Route path='/info' element={<Info />} />
+                <Route path='/login' element={<Login />} />
                 <Route path='/post_login' element={<PostLogin />} />
                 <Route path='/under_construction' element={<UnderConstruction />} />
                 <Route path='/view_capsules' element={<ViewCapsules />} />

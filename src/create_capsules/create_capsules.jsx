@@ -3,7 +3,7 @@ import React from 'react';
 export function CreateCapsules() {
   return (
     <main>
-        <h2 class="text">Create a Capsule!</h2>
+        <h2 className="text">Create a Capsule!</h2>
         <form>
             <div>
                 <input type="text" placeholder="Enter Title of Experience Here" size="50"/>
@@ -14,11 +14,11 @@ export function CreateCapsules() {
             </div>
             <br/>
             <div>
-                <p class="text">Insert any pictures here: </p><input type="file" />
+                <p className="text">Insert any pictures here: </p><input type="file" />
             </div>
             <br/>
             <div>
-                <p class="text">Enter date this capsule will open: </p><input type="date" />
+                <p className="text">Enter date this capsule will open: </p><input type="date" />
             </div>
             <br/>
             <div>

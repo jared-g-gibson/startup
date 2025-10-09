@@ -1,75 +1,16 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>My Vault of Time</title>
-        <link rel="stylesheet" href="css/main.css">
-        <!-- Include bootstrap CSS framework -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-            crossorigin="anonymous"
-            />
-    </head>
-    <body>
-        <header class="container-fluid">
-            <!-- <div class="header"><h1>My Vault</h1></div> -->
-            <!--Post login page. This will disappear in the future once the login functionality works.-->
-            <!-- <div class="header"><a href="html/post_login.html">Post Login Page</a></div> -->
-            <nav class="navbar navbar-expand-lg navbar-light custom-bg">
-                <a class="navbar-brand" href="#">My Vault of Time</a>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="post-login" href="html/post_login.html">Post Login Page</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <h3 class="text">Welcome! Login to view your Vault</h3>
-            <form method="get" action="html/post_login.html">
-                <div class="login-prompt">
-                    <!--Username-->
-                    <div class="input-group mb-4">
-                        <span class="text">Username:</span>
-                        <input class="form-control" type="text" placeholder="username" />
-                    </div>
-                    <!--Password-->
-                    <div class="input-group mb-4">
-                        <span class="text">Password:</span>
-                        <input class="form-control" type="password" placeholder="password" />
-                    </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                </div>
-                
-            </form>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
 
-            <p class="text">Click <a href="html/create_account.html">here</a> to create an account</p>
-
-            <h5 class="text">On this day, an interesting thing happened. This is where an api will go</h5>
-            <img src = "https://images.pexels.com/photos/1095601/pexels-photo-1095601.jpeg" width="500" />
-
-            <div>
-                <a href="html/post_login.html">Home Page</a>
-            </div>
-        </main>
-        <footer class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light custom-bg">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        Author: Jared Gibson
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://github.com/jared-g-gibson/startup">Github Repository</a>
-                    </li>
-                    <li>
-                        <a href="html/info.html">Information</a>
-                    </li>
-                </ul>
-            </nav>
-        </footer>
-    </body>
+    <title>My Vault of Time React</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.jsx"></script>
+  </body>
 </html>

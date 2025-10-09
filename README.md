@@ -25,11 +25,11 @@ Have you ever wanted to encapsulate a moment in time? With this website, that dr
 
 #### Rough Sketch of Application
 
-![Page 1](specification_images/page_1.jpg)
-![Page 2](specification_images/page_2.jpg)
-![Page 3](specification_images/page_3.jpg)
-![Page 4](specification_images/page_4.jpg)
-![Page 5](specification_images/page_5.jpg)
+![Page 1](public/specification_images/page_1.jpg)
+![Page 2](public/specification_images/page_2.jpg)
+![Page 3](public/specification_images/page_3.jpg)
+![Page 4](public/specification_images/page_4.jpg)
+![Page 5](public/specification_images/page_5.jpg)
 
 Here is a rough sketch of my application. Each page represents a different page of the website.
 

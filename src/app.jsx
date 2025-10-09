@@ -18,7 +18,7 @@ export default function App() {
         <div className="app">
             <header className="container-fluid">
                 <nav className="navbar navbar-expand-lg navbar-light custom-bg">
-                    <NavLink className="navbar-brand" to="index">My Vault of Time</NavLink>
+                    <NavLink className="navbar-brand" to="/">My Vault of Time</NavLink>
                     <ul className="navbar-nav">
                         <li className="nav-item">
                             <NavLink className="menu" to="post_login">Home Page</NavLink>

@@ -169,6 +169,36 @@ Which of the following correctly describes JSON?
 
 What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo  do?
 
+``` 
+chmod - change file permissions
+
+pwd - present working directory
+
+cd - change directory
+
+ls - list directory
+
+vim - enter vim mode
+
+nano - enter nano mode (file editing)
+
+mkdir - make directory
+
+mv - move file
+
+rm - remove file
+
+man - display manual pages
+
+ssh - secure connection with something else
+
+ps - process status
+
+wget - download files from internet
+
+sudo - root privilge
+```
+
 Which of the following console command creates a remote shell session?
 
 Which of the following is true when the -la parameter is specified for the ls console command?
@@ -184,3 +214,19 @@ Port 443, 80, 22 is reserved for which protocol?
 ```Port 443 is used for HTTPS, Port 80 is used for HTTP, and Port 22 is used for SSH.```
 
 What will the following code using Promises output when executed?
+```
+Many possiblities. 
+
+1. Promise.resolve('done').then(console.log) -> 'done'
+
+2. Promise.reject('error).catch(console.log) -> 'error
+
+3. new Promise(res => setTimeout(() => res('Hi'),1000)).then(console.log) => 'Hi' after 1s
+
+4. Async function returns value -> printed when awaited or .then
+
+5. Promise chain: Promise.resolve(2).then(x=>x*2).then(x=>x+1).then(console.log) -> 5
+
+6. Reject handled -> shows error via catch.
+
+```

@@ -179,7 +179,7 @@ Is a web certificate is necessary to use HTTPS.
 
 Can a DNS A record can point to an IP address or another A record.
 
-```Port 443, 80, 22 is reserved for which protocol? 
-Port 443 is used for HTTPS, Port 80 is used for HTTP, and Port 22 is used for SSH.```
+Port 443, 80, 22 is reserved for which protocol? 
+```Port 443 is used for HTTPS, Port 80 is used for HTTP, and Port 22 is used for SSH.```
 
 What will the following code using Promises output when executed?

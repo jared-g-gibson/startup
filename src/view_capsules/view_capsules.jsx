@@ -4,15 +4,21 @@ import { NavLink } from 'react-router-dom';
 
 export function ViewCapsules({usernameApp}) {
 
+  const [capsules, setCapsules] = React.useState([]);
+
+  React.useEffect(() => {
+    const capsulesText = localStorage.getItem(usernameApp);
+    if (capsulesText) {
+      setScores(JSON.parse(capsulesText));
+    }
+  }, []);
+
   // Returns true if date passed in is later than current date
   function compareTime(time1) {
     const date1 = new Date(time1);
     const date2 = new Date();
     return date1 > date2;
   }
-  console.log("Here");
-  var capsules = localStorage.getItem(usernameApp);
-  console.log(capsules);
 
 //   var capsules = localStorage.getItem(usernameApp);
 //   // var capsules = JSON.parse(capsules_string);

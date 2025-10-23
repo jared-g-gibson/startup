@@ -77,6 +77,7 @@ export default function App() {
                 <Route path='/login' element={<Login />} />
                 <Route path='/post_login' element={<PostLogin usernameApp={usernameApp}/>} />
                 <Route path='/under_construction' element={<UnderConstruction />} />
+                <Route path='/view_capsule' element={<ViewCapsule />} />
                 <Route path='/view_capsules' element={<ViewCapsules usernameApp={usernameApp}/>} />
                 <Route path='*' element={<NotFound />} />
             </Routes>

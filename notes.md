@@ -125,7 +125,7 @@ Style sheets and icons.
 
 In the following code,  what does a div tag do?
 
-```The <div> tag in HTML defines a division or container used to group together other HTML elements. It serves as a generic block-level container with no inherent semantic meaning but is essential for organizing layout and structure within a webpage.```
+```The <div> tag in HTML defines a division or container used to group together other HTML elements.```
 
 In the following code, what is the difference between the #title and .grid selector?
 
@@ -138,7 +138,7 @@ h1 - Type selector
 
 In the following code, what is the difference between padding and margin?
 
-```Padding is the space between an element's content and its border. Margin is the space outside the element's border, separating it from adjacent elements.Padding is within the little box and margin is outside the box.```
+```Padding is the space between an element's content and its border. Margin is the space outside the element's border, separating it from adjacent elements.Padding is within the little box and margin is outside the box. Padding is inside```
 
 Given this HTML and this CSS how will the images be displayed using flex?
 

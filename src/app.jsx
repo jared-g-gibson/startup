@@ -15,6 +15,8 @@ import { LoggedIn } from './logged_in/logged_in';
 import { LoggedOut } from './logged_out/logged_out';
 
 export default function App() {
+  const [usernameApp, setUsernameApp] = React.useState(localStorage.getItem('user') || null);
+
   return (
     <BrowserRouter>
         <div className="app">
@@ -33,26 +35,26 @@ export default function App() {
             </header> */}
 
             <Routes>
-                <Route path='/' element={<LoggedOut />} exact />
+                <Route path='/' element={<LoggedOut setUsernameApp={setUsernameApp}/>} exact />
                 <Route path='/collaborate' element={<LoggedIn />} />
                 <Route path='/create_account' element={<LoggedOut />} />
                 <Route path='/create_capsules' element={<LoggedIn />} />
                 <Route path='/info' element={<LoggedOut />} />
                 <Route path='/login' element={<LoggedOut />} />
-                <Route path='/post_login' element={<LoggedIn />} />
+                <Route path='/post_login' element={<LoggedIn usernameApp={usernameApp}/>} />
                 <Route path='/under_construction' element={<LoggedIn />} />
                 <Route path='/view_capsules' element={<LoggedIn />} />
                 <Route path='*' element={<LoggedOut />} />
             </Routes>
 
             <Routes>
-                <Route path='/' element={<Login />} exact />
+                <Route path='/' element={<Login setUsernameApp={setUsernameApp}/>} exact />
                 <Route path='/collaborate' element={<Collaborate />} />
                 <Route path='/create_account' element={<CreateAccount />} />
                 <Route path='/create_capsules' element={<CreateCapsules />} />
                 <Route path='/info' element={<Info />} />
                 <Route path='/login' element={<Login />} />
-                <Route path='/post_login' element={<PostLogin />} />
+                <Route path='/post_login' element={<PostLogin usernameApp={usernameApp}/>} />
                 <Route path='/under_construction' element={<UnderConstruction />} />
                 <Route path='/view_capsules' element={<ViewCapsules />} />
                 <Route path='*' element={<NotFound />} />

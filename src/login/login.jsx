@@ -1,22 +1,45 @@
 import React from 'react';
 import { NavLink } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import '../app.css';
 
-export function Login() {
+export function Login({setUsernameApp}) {
+  const [usernameLogin, setUsernameLogin] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const navigate = useNavigate();
+
+
+  function usernameChanged(e) {
+    setUsernameLogin(e.target.value);
+    console.log({usernameLogin})
+  }
+
+  function passwordChanged(e) {
+    setPassword(e.target.value);
+    console.log({password})
+  }
+
+  function handleSubmit() {
+    console.log("login" + usernameLogin);
+    localStorage.setItem('user', usernameLogin);
+    setUsernameApp(usernameLogin);
+    navigate('./post_login');
+  }
+
   return (
     <main>
             <h3 className="text">Welcome! Login to view your Vault</h3>
-            <form method="get" action="/post_login">
+            <form method="get">
                 <div className="login-prompt">
                     <div className="input-group mb-4">
                         <span className="text">Username:</span>
-                        <input className="form-control" type="text" placeholder="username" />
+                        <input className="form-control" type="text" placeholder="username" onChange={usernameChanged} />
                     </div>
                     <div className="input-group mb-4">
                         <span className="text">Password:</span>
-                        <input className="form-control" type="password" placeholder="password" />
+                        <input className="form-control" type="password" placeholder="password" onChange={passwordChanged} />
                     </div>
-                    <button type="submit" className="btn btn-primary">Login</button>
+                    <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Login</button>
                 </div>
                 
             </form>

@@ -9,9 +9,29 @@ export function ViewCapsules({usernameApp}) {
   React.useEffect(() => {
     const capsulesText = localStorage.getItem(usernameApp);
     if (capsulesText) {
-      setScores(JSON.parse(capsulesText));
+      setCapsules(JSON.parse(capsulesText));
     }
   }, []);
+
+  var capsuleRows = [];
+  console.log(capsules);
+  if (capsules.length) {
+    for (const [i, capsule] of capsules.entries()) {
+        capsuleRows.push(
+            <tr key='i'>
+                <td>{capsule.title}</td>
+                <td>{capsule.date}</td>
+            </tr>
+        );
+    }
+  }
+  else {
+    capsuleRows.push(
+        <tr key='0'>
+            <td>Add some capsules!</td>
+        </tr>
+    )
+  }
 
   // Returns true if date passed in is later than current date
   function compareTime(time1) {
@@ -29,10 +49,19 @@ export function ViewCapsules({usernameApp}) {
 //   else {
 //     console.log("Make some capsules!")
 //   }
+
   return (
     <main>
 
-
+        <table>
+            <thead>
+                <tr>
+                    <th>Capsule Title</th>
+                    <th>Date Opens</th>
+                </tr>
+            </thead>
+            <tbody>{capsuleRows}</tbody>
+        </table>
             {/* <h2 class="text">View Your Current Capsules Here!</h2>
             <table>
                 <tr class="row1">

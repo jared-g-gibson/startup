@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, NavLink, Route, Routes, useNavigate} from 'react-router-dom';
 import { Collaborate } from './collaborate/collaborate';
 import { CreateAccount } from './create_account/create_account';
 import { CreateCapsules } from './create_capsules/create_capsules';
@@ -16,6 +16,11 @@ import { LoggedOut } from './logged_out/logged_out';
 
 export default function App() {
   const [usernameApp, setUsernameApp] = React.useState(localStorage.getItem('user') || null);
+
+  function handleLogout() {
+    localStorage.removeItem('user');
+    setUsernameApp(null);
+  }
 
   return (
     <BrowserRouter>
@@ -34,7 +39,7 @@ export default function App() {
                 </nav>
             </header> */}
 
-            <Routes>
+            {/* <Routes>
                 <Route path='/' element={<LoggedOut setUsernameApp={setUsernameApp}/>} exact />
                 <Route path='/collaborate' element={<LoggedIn />} />
                 <Route path='/create_account' element={<LoggedOut />} />
@@ -45,7 +50,23 @@ export default function App() {
                 <Route path='/under_construction' element={<LoggedIn />} />
                 <Route path='/view_capsules' element={<LoggedIn />} />
                 <Route path='*' element={<LoggedOut />} />
-            </Routes>
+            </Routes> */}
+
+            <header className="container-fluid">
+                <nav className="navbar navbar-expand-lg navbar-light custom-bg">
+                    {usernameApp && <NavLink className="navbar-brand" to="/post_login">My Vault of Time</NavLink>}
+                    <ul className="navbar-nav">
+                        {usernameApp &&
+                        <li className="nav-item">
+                            <NavLink className="menu" to="/post_login">Home Page</NavLink>
+                        </li>}
+                        {usernameApp && 
+                        <li className="nav-item">
+                            <NavLink className="menu" to="/" onClick={handleLogout}>Logout</NavLink>
+                        </li>}
+                    </ul>
+                </nav>
+            </header>
 
             <Routes>
                 <Route path='/' element={<Login setUsernameApp={setUsernameApp}/>} exact />

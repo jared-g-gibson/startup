@@ -2,10 +2,32 @@ import React from 'react';
 import './view_capsules.css'
 import { NavLink } from 'react-router-dom';
 
-export function ViewCapsules() {
+export function ViewCapsules({usernameApp}) {
+
+  // Returns true if date passed in is later than current date
+  function compareTime(time1) {
+    const date1 = new Date(time1);
+    const date2 = new Date();
+    return date1 > date2;
+  }
+  console.log("Here");
+  var capsules = localStorage.getItem(usernameApp);
+  console.log(capsules);
+
+//   var capsules = localStorage.getItem(usernameApp);
+//   // var capsules = JSON.parse(capsules_string);
+//   if (capsules.length()) {
+//     console.log(capsules.entries());
+
+//   }
+//   else {
+//     console.log("Make some capsules!")
+//   }
   return (
     <main>
-            <h2 class="text">View Your Current Capsules Here!</h2>
+
+
+            {/* <h2 class="text">View Your Current Capsules Here!</h2>
             <table>
                 <tr class="row1">
                     <th class="text">Capsule Name</th>
@@ -23,7 +45,7 @@ export function ViewCapsules() {
                     <td class="text"><NavLink to="/under_construction">Mission Photos</NavLink></td>
                     <td class="text">September 1, 2025</td>
                 </tr>
-            </table>
+            </table> */}
         </main>
   );
 }

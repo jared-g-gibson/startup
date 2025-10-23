@@ -11,16 +11,13 @@ export function Login({setUsernameApp}) {
 
   function usernameChanged(e) {
     setUsernameLogin(e.target.value);
-    console.log({usernameLogin})
   }
 
   function passwordChanged(e) {
     setPassword(e.target.value);
-    console.log({password})
   }
 
   function handleSubmit() {
-    console.log("login" + usernameLogin);
     localStorage.setItem('user', usernameLogin);
     setUsernameApp(usernameLogin);
     navigate('./post_login');

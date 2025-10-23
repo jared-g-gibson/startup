@@ -117,33 +117,86 @@ I also learned that markdown allows for flexibility when writing things for the 
 
 In the following code, what does the link element do?
 
+```
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+Style sheets and icons.
+```
+
 In the following code,  what does a div tag do?
+
+```The <div> tag in HTML defines a division or container used to group together other HTML elements. It serves as a generic block-level container with no inherent semantic meaning but is essential for organizing layout and structure within a webpage.```
 
 In the following code, what is the difference between the #title and .grid selector?
 
+```
+* - Universal Selector
+h1 - Type selector
+. - Class Selector
+# = ID selector
+```
+
 In the following code, what is the difference between padding and margin?
 
+```Padding is the space between an element's content and its border. Margin is the space outside the element's border, separating it from adjacent elements.Padding is within the little box and margin is outside the box.```
+
 Given this HTML and this CSS how will the images be displayed using flex?
+
+```Flexbox container is a layout model designed to lay out elements efficiently. 
+
+display: flex - Activates flexbox layout
+flex-direction: sets main axis direction
+justify-content: aligns items along main axis
+align-items: aligns items along cross axis
+flex-wrap: allows items to wrap
+align-content: aligns multiple rows/columns
+```
 
 What does the following padding CSS do?
 
 What does the following code using arrow syntax function declaration do?
 
+```let myFunction = (a, b) => a * b;```
+
 What does the following code using map with an array output?
+
+```const numbers = [4, 9, 16, 25];
+const newArr = numbers.map(Math.sqrt)```
 
 What does the following code output using getElementByID and addEventListener?
 
+```element.addEventListener("click", myFunction);
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}```
+
 What does the following line of Javascript do using a # selector?
+
+```This means getting IDs with javascript.```
 
 Which of the following are true? (mark all that are true about the DOM)
 
+```Programming interface between HTML and XML. Represents a tree of elements. Can change parts of the document. Javscript manages the DOM. Tree structure.```
+
 By default, the HTML span element has a default CSS display property value of: 
+
+```inline```
 
 How would you use CSS to change all the div elements to have a background color of red?
 
+```div {background-color: red;}```
+
 How would you display an image with a hyperlink in HTML?
 
+```<a href="https://www.example.com">
+  <img src="image.jpg" alt="Example Image" width="300" height="200">
+</a>
+```
+
 In the CSS box model, what is the ordering of the box layers starting at the inside and working out?
+
+```Content -> Padding -> Border -> Margin```
 
 Given the following HTML, what CSS would you use to set the text "trouble" to green and leave the "double" text unaffected?
 
@@ -151,17 +204,31 @@ What will the following code output when executed using a for loop and console.l
 
 How would you use JavaScript to select an element with the id of “byu” and change the text color of that element to green?
 
+```#byu {color: green}```
+
 What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?
 
 How do you declare the document type to be html?
+
+```<!DOCTYPE html>```
 
 What is valid javascript syntax for if, else, for, while, switch statements?
 
 What is the correct syntax for creating a javascript object?
 
+```
+const person = {}
+const person = new Object({})
+Object.create()
+```
+
 Is it possible to add new properties to javascript objects?
 
+```Yes```
+
 If you want to include JavaScript on an HTML page, which tag do you use?
+
+```<script>```
 
 Given the following HTML, what JavaScript could you use to set the text "animal" to "crow" and leave the "fish" text unaffected?
 
@@ -196,18 +263,28 @@ ps - process status
 
 wget - download files from internet
 
-sudo - root privilge
+sudo - root privilege
 ```
 
 Which of the following console command creates a remote shell session?
 
+```ssh username@host```
+
 Which of the following is true when the -la parameter is specified for the ls console command?
+
+```ls -la lists all files (including hidden) in their long format```
 
 Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain?
 
+```.click is the top level domain, bozo is the root domain, banana.fruit is the subdomain ```
+
 Is a web certificate is necessary to use HTTPS.
 
+```Yes```
+
 Can a DNS A record can point to an IP address or another A record.
+
+```Can only point to IP address.```
 
 Port 443, 80, 22 is reserved for which protocol? 
 

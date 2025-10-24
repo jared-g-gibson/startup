@@ -34,7 +34,7 @@ export function CreateCapsules({usernameApp}) {
     }
     const myJSONObject = {
         title: title,
-        jounral: journal,
+        journal: journal,
         date: date
     };
     capsules.push(myJSONObject);

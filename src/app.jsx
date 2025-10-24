@@ -11,11 +11,21 @@ import { Login } from './login/login'
 import { PostLogin } from './post_login/post_login';
 import { UnderConstruction } from './under_construction/under_construction';
 import { ViewCapsules } from './view_capsules/view_capsules';
+import { ViewCapsule } from './view_capsule/view_capsule';
 import { LoggedIn } from './logged_in/logged_in';
 import { LoggedOut } from './logged_out/logged_out';
 
 export default function App() {
   const [usernameApp, setUsernameApp] = React.useState(localStorage.getItem('user') || null);
+  const [date, setDate] = React.useState(null);
+  const [journal, setJournal] = React.useState(null);
+  const [title, setTitle] = React.useState(null);
+
+//   React.useEffect(() => {
+//       setDate("");
+//       setJournal("");
+//       setTitle("");
+//     }, []);
 
   function handleLogout() {
     localStorage.removeItem('user');
@@ -77,8 +87,8 @@ export default function App() {
                 <Route path='/login' element={<Login />} />
                 <Route path='/post_login' element={<PostLogin usernameApp={usernameApp}/>} />
                 <Route path='/under_construction' element={<UnderConstruction />} />
-                <Route path='/view_capsule' element={<ViewCapsule />} />
-                <Route path='/view_capsules' element={<ViewCapsules usernameApp={usernameApp}/>} />
+                <Route path='/view_capsule' element={<ViewCapsule journal={journal} title={title}/>}/>
+                <Route path='/view_capsules' element={<ViewCapsules usernameApp={usernameApp} setJournal={setJournal} setTitle={setTitle}/>} />
                 <Route path='*' element={<NotFound />} />
             </Routes>
 

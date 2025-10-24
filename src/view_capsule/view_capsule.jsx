@@ -1,12 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import '../app.css'
 
-export function ViewCapsule({date}, {journal}, {title}) {
+export function ViewCapsule() {
 
   return (
     <main>
-      <h1>{title} - {date}</h1>
-      <p>{journal}</p>
+      <h1>{localStorage.getItem("title")} - {localStorage.getItem("date")} </h1>
+      <p>{localStorage.getItem("journal")}</p>
     </main>
   );
 }

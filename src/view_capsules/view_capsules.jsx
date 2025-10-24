@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 export function ViewCapsules({usernameApp}) {
 
   const [capsules, setCapsules] = React.useState([]);
+  
 
   React.useEffect(() => {
     const capsulesText = localStorage.getItem(usernameApp);
@@ -13,16 +14,23 @@ export function ViewCapsules({usernameApp}) {
     }
   }, []);
 
-  // Returns true if date passed in is later than current date
+  // Returns true if date passed in is earlier than current date
   function compareTime(time1) {
     const date1 = new Date(time1);
     const date2 = new Date();
-    return date1 > date2;
+    return date1 < date2;
   }
 
-  function calculateCapsule(i, date) {
+  function calculateCapsule(i, date, journal, title) {
     if(compareTime(date)) {
-        return <td><NavLink to="./view_capsule">{i}</NavLink></td>;
+        // setDate(JSON.stringify(date));
+        // return <td><NavLink to="/view_capsule">{i}</NavLink></td>;
+        // var data = [date, journal, title];
+
+        localStorage.setItem("date", JSON.stringify(date));
+        localStorage.setItem("journal", JSON.stringify(journal));
+        localStorage.setItem("title", JSON.stringify(title));
+        return <td><NavLink to="/view_capsule">{i}</NavLink></td>;
     }
     else {
         return <td>{i}</td>;
@@ -35,7 +43,7 @@ export function ViewCapsules({usernameApp}) {
     for (const [i, capsule] of capsules.entries()) {
         capsuleRows.push(
             <tr key='i'>
-                {calculateCapsule(i, capsule.date)}
+                {calculateCapsule(i, capsule.date, capsule.journal, capsule.title)}
                 <td>{capsule.title}</td>
                 <td>{capsule.date}</td>
             </tr>

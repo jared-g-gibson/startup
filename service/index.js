@@ -9,9 +9,13 @@ app.use(express.json());
 
 let users = [];
 let scores = [];
+let capsules = {};
+
+const authCookieName = 'token';
 
 let apiRouter = express.Router();
 app.use(`/api`, apiRouter);
+app.use(express.static('public'));
 
 
 app.get('/', (_req, res) => {
@@ -26,7 +30,7 @@ apiRouter.post('/auth/create', async (req, res) => {
     const user = await createUser(req.body.username, req.body.password);
 
     setAuthCookie(res, user.token);
-    res.send({ email: user.username });
+    res.send({ username: user.username });
   }
 });
 
@@ -64,10 +68,28 @@ const verifyAuth = async (req, res, next) => {
   }
 };
 
+// GetCapsules
+apiRouter.get('/capsules', verifyAuth, (_req, res) => {
+    console.log("We are in getcapsules")
+    res.send(capsules[_req.username]);
+});
+
 // GetScores
 apiRouter.get('/scores', verifyAuth, (_req, res) => {
+  console.log("we are in get scores")
   res.send(scores);
 });
+
+// SubmitCapsule
+apiRouter.post('/api/post_capsule', verifyAuth, (req, res) => {
+    if(req.username in capsules) {
+        capsules[req.username].push(req.capsule);
+    }
+    else {
+        capsules[req.username] = [req.capsule];
+    }
+    res.send(capsules);
+})
 
 // SubmitScore
 apiRouter.post('/score', verifyAuth, (req, res) => {
@@ -107,11 +129,11 @@ function updateScores(newScore) {
   return scores;
 }
 
-async function createUser(email, password) {
+async function createUser(username, password) {
   const passwordHash = await bcrypt.hash(password, 10);
 
   const user = {
-    email: email,
+    username: username,
     password: passwordHash,
     token: uuid.v4(),
   };

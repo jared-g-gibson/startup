@@ -23,7 +23,7 @@ export function CreateAccount() {
     }
     else {
         
-        alert('Authentication failed');
+        alert('Username already taken');
     }
 }
 

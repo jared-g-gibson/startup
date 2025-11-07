@@ -30,38 +30,15 @@ export default function App() {
   function handleLogout() {
     localStorage.removeItem('user');
     setUsernameApp(null);
+    fetch('api/auth', {
+      method: 'DELETE',
+    });
+    navigate('/');
   }
 
   return (
     <BrowserRouter>
         <div className="app">
-            {/* <header className="container-fluid">
-                <nav className="navbar navbar-expand-lg navbar-light custom-bg">
-                    <NavLink className="navbar-brand" to="/">My Vault of Time</NavLink>
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <NavLink className="menu" to="/">Home Page</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="menu" to="/post_login">Logout Page</NavLink>
-                        </li>
-                    </ul>
-                </nav>
-            </header> */}
-
-            {/* <Routes>
-                <Route path='/' element={<LoggedOut setUsernameApp={setUsernameApp}/>} exact />
-                <Route path='/collaborate' element={<LoggedIn />} />
-                <Route path='/create_account' element={<LoggedOut />} />
-                <Route path='/create_capsules' element={<LoggedIn />} />
-                <Route path='/info' element={<LoggedOut />} />
-                <Route path='/login' element={<LoggedOut />} />
-                <Route path='/post_login' element={<LoggedIn usernameApp={usernameApp}/>} />
-                <Route path='/under_construction' element={<LoggedIn />} />
-                <Route path='/view_capsules' element={<LoggedIn />} />
-                <Route path='*' element={<LoggedOut />} />
-            </Routes> */}
-
             <header className="container-fluid">
                 <nav className="navbar navbar-expand-lg navbar-light custom-bg">
                     {usernameApp && <NavLink className="navbar-brand" to="/post_login">My Vault of Time</NavLink>}
@@ -84,7 +61,7 @@ export default function App() {
                 <Route path='/create_account' element={<CreateAccount />} />
                 <Route path='/create_capsules' element={<CreateCapsules usernameApp={usernameApp}/>} />
                 <Route path='/info' element={<Info />} />
-                <Route path='/login' element={<Login />} />
+                <Route path='/login' element={<Login setUsernameApp={setUsernameApp}/>} />
                 <Route path='/post_login' element={<PostLogin usernameApp={usernameApp}/>} />
                 <Route path='/under_construction' element={<UnderConstruction />} />
                 <Route path='/view_capsule' element={<ViewCapsule journal={journal} title={title}/>}/>

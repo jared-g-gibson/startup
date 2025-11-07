@@ -6,6 +6,7 @@ import '../app.css';
 export function Login({setUsernameApp}) {
   const [usernameLogin, setUsernameLogin] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [pokemon, setPokemon] = React.useState("");
   const navigate = useNavigate();
 
 
@@ -18,8 +19,6 @@ export function Login({setUsernameApp}) {
   }
 
   function handleSubmit() {
-    localStorage.setItem('user', usernameLogin);
-    // setUsernameApp(usernameLogin);
     // navigate('./post_login');
     authenticateUser();
   }
@@ -34,11 +33,25 @@ export function Login({setUsernameApp}) {
     if (res.ok) {
         navigate('/post_login');
         console.log('success');
+        localStorage.setItem('user', usernameLogin);
+        setUsernameApp(usernameLogin);
     }
     else {
         alert('Authentication failed');
+        setUsernameApp(null);
     }
 }
+
+  React.useEffect(() => {
+    let num = Math.floor(Math.random() * 1000);
+    let api_str = "https://pokeapi.co/api/v2/pokemon/" + num.toString();
+    fetch(api_str)
+    .then((response) => response.json())
+    .then((data) => 
+    {setPokemon(data.name);})
+    .catch((error) => console.log(error));
+
+  }, []);
 
   return (
     <main>
@@ -59,8 +72,7 @@ export function Login({setUsernameApp}) {
             </div>
 
             <p className="text"> <NavLink href="/create_account">Click here to create an account</NavLink></p>
-
-            <h5 className="text">On this day, an interesting thing happened. This is where an api will go</h5>
+            <h5 className="text">Random pokemon of the day: {pokemon}</h5> 
             <img src = "https://images.pexels.com/photos/1095601/pexels-photo-1095601.jpeg" width="500" />
         </main>
   );

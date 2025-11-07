@@ -19,7 +19,7 @@ export function Login({setUsernameApp}) {
 
   function handleSubmit() {
     localStorage.setItem('user', usernameLogin);
-    setUsernameApp(usernameLogin);
+    // setUsernameApp(usernameLogin);
     // navigate('./post_login');
     authenticateUser();
   }

@@ -11,6 +11,8 @@ let users = [];
 let scores = [];
 let capsules = {};
 
+let total_capsules = 0;
+
 const authCookieName = 'token';
 
 let apiRouter = express.Router();
@@ -67,35 +69,6 @@ const verifyAuth = async (req, res, next) => {
     res.status(401).send({ msg: 'Unauthorized' });
   }
 };
-
-// GetCapsules
-apiRouter.get('/capsules', verifyAuth, (_req, res) => {
-    console.log("We are in getcapsules")
-    res.send(capsules[_req.username]);
-});
-
-// GetScores
-apiRouter.get('/scores', verifyAuth, (_req, res) => {
-  console.log("we are in get scores")
-  res.send(scores);
-});
-
-// SubmitCapsule
-apiRouter.post('/api/post_capsule', verifyAuth, (req, res) => {
-    if(req.username in capsules) {
-        capsules[req.username].push(req.capsule);
-    }
-    else {
-        capsules[req.username] = [req.capsule];
-    }
-    res.send(capsules);
-})
-
-// SubmitScore
-apiRouter.post('/score', verifyAuth, (req, res) => {
-  scores = updateScores(req.body);
-  res.send(scores);
-});
 
 // Default error handler
 app.use(function (err, req, res, next) {

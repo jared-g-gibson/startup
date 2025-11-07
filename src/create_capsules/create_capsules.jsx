@@ -44,7 +44,7 @@ export function CreateCapsules({usernameApp}) {
   return (
     <main>
         <h2 className="text">Create a Capsule!</h2>
-        <form>
+        <div>
             <div>
                 <input type="text" placeholder="Enter Title of Experience Here" size="50" onChange={titleChanged}/>
             </div>
@@ -64,7 +64,7 @@ export function CreateCapsules({usernameApp}) {
             <div>
                 <input type="submit" onClick={handleSubmit}/>
             </div>
-        </form>
+        </div>
     </main>
   );
 }

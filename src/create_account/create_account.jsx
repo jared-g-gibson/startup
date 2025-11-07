@@ -32,10 +32,10 @@ export function CreateAccount() {
         <h3 className="text">Create an Account</h3>
         <div>
             <div className="login-prompt">
-                <div className="input-group mb-4">
+                {/* <div className="input-group mb-4">
                     <span className="text">Name:</span>
                     <input className="form-control" type="text" placeholder="name" onChange={(e) => setName(e.target.value)} required/>
-                </div>
+                </div> */}
                 <div className="input-group mb-4">
                     <span className="text">Username:</span>
                     <input className="form-control" type="text" placeholder="username" onChange={(e) => setUsername(e.target.value)} required/>
@@ -44,7 +44,7 @@ export function CreateAccount() {
                     <span className="text">Password:</span>
                     <input className="form-control" type="password" placeholder="password" onChange={(e) => setPassword(e.target.value)} required/>
                 </div>
-                <button type="submit" className="btn btn-primary" disabled={!(name && username && password)} onClick={createAuth}>Create Account</button>
+                <button type="submit" className="btn btn-primary" disabled={!(username && password)} onClick={createAuth}>Create Account</button>
             </div>
             
         </div>

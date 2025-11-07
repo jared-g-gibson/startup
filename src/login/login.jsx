@@ -20,26 +20,43 @@ export function Login({setUsernameApp}) {
   function handleSubmit() {
     localStorage.setItem('user', usernameLogin);
     setUsernameApp(usernameLogin);
-    navigate('./post_login');
+    // navigate('./post_login');
+    authenticateUser();
   }
+
+  async function authenticateUser() {
+    const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json' },
+        body: JSON.stringify({usernameLogin, password}),
+    });
+    await res.json();
+    if (res.ok) {
+        navigate('/post_login');
+        console.log('success');
+    }
+    else {
+        alert('Authentication failed');
+    }
+}
 
   return (
     <main>
             <h3 className="text">Welcome! Login to view your Vault</h3>
-            <form method="get">
+            <div>
                 <div className="login-prompt">
                     <div className="input-group mb-4">
                         <span className="text">Username:</span>
-                        <input className="form-control" type="text" placeholder="username" onChange={usernameChanged} />
+                        <input className="form-control" type="text" placeholder="username" onChange={usernameChanged} required/>
                     </div>
                     <div className="input-group mb-4">
                         <span className="text">Password:</span>
-                        <input className="form-control" type="password" placeholder="password" onChange={passwordChanged} />
+                        <input className="form-control" type="password" placeholder="password" onChange={passwordChanged} required/>
                     </div>
-                    <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Login</button>
+                    <button type="submit" className="btn btn-primary" onClick={handleSubmit} disabled={!(usernameLogin && password)}>Login</button>
                 </div>
                 
-            </form>
+            </div>
 
             <p className="text"> <NavLink href="/create_account">Click here to create an account</NavLink></p>
 

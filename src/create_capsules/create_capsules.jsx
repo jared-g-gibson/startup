@@ -1,11 +1,15 @@
 import React from 'react';
 import './create_capsules.css';
+import { useNavigate } from 'react-router-dom';
+
 
 export function CreateCapsules({usernameApp}) {
 
   const [title, setTitle] = React.useState("");
   const [journal, setJournal] = React.useState("");
   const [date, setDate] = React.useState("");
+  const navigate = useNavigate();
+  
 
   async function create_capsule() {
     const user = usernameApp;

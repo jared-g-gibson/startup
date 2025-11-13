@@ -34,18 +34,39 @@ apiRouter.post('/create_capsule', async (req, res) => {
     date: req.body.date, 
     journal: req.body.journal
   }
-  
+
   DB.createCapsule(capsule);
+  capsules.push(capsule);
   res.send({capsule: capsule});
-})
+});
+
+// Get Capsules for a user
+apiRouter.post('/get_capsules', async (req, res) => {
+  const user_capsules = getCapsules(req.body.user);
+  res.send(user_capsules);
+});
+
+function getCapsules(user) {
+  const user_capsules = DB.getCapsules(user);
+  const user_capsules_fixed = [];
+  for(let i = 0; i < user_capsules.length; i++) {
+    let capsule = {
+      title: user_capsules[i][title],
+      date: user_capsules[i][date],
+      journal: user_capsules[i][journal]
+    };
+    user_capsules_fixed.push(capsule);
+  }
+  return user_capsules_fixed.toArray();
+}
 
 // CreateAuth a new user
 apiRouter.post('/auth/create', async (req, res) => {
-  if (await findUser('username', req.body.username)) {
+  if (await findUser('user', req.body.username)) {
     res.status(409).send({ msg: 'Existing username' });
   } else {
     const user = await createUser(req.body.username, req.body.password);
-
+    
     setAuthCookie(res, user.token);
     res.send({ username: user.username });
   }
@@ -53,12 +74,12 @@ apiRouter.post('/auth/create', async (req, res) => {
 
 // GetAuth login an existing user
 apiRouter.post('/auth/login', async (req, res) => {
-  const user = await findUser('username', req.body.usernameLogin);
+  const user = await findUser('user', req.body.username);
   if (user) {
     if (await bcrypt.compare(req.body.password, user.password)) {
       user.token = uuid.v4();
       setAuthCookie(res, user.token);
-      res.send({ usernameLogin: user.username });
+      res.send({ username: user.username });
       return;
     }
   }
@@ -95,28 +116,6 @@ app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
 
-// updateScores considers a new score for inclusion in the high scores.
-function updateScores(newScore) {
-  let found = false;
-  for (const [i, prevScore] of scores.entries()) {
-    if (newScore.score > prevScore.score) {
-      scores.splice(i, 0, newScore);
-      found = true;
-      break;
-    }
-  }
-
-  if (!found) {
-    scores.push(newScore);
-  }
-
-  if (scores.length > 10) {
-    scores.length = 10;
-  }
-
-  return scores;
-}
-
 async function createUser(username, password) {
   const passwordHash = await bcrypt.hash(password, 10);
 
@@ -126,14 +125,17 @@ async function createUser(username, password) {
     token: uuid.v4(),
   };
   users.push(user);
-
+  DB.addUser(user);
   return user;
 }
 
 async function findUser(field, value) {
   if (!value) return null;
 
-  return users.find((u) => u[field] === value);
+  if (field === 'token') {
+    return DB.getUserByToken(value);
+  }
+  return DB.getUser(value);
 }
 
 // setAuthCookie in the HTTP response

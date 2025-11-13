@@ -20,11 +20,15 @@ const capsuleCollection = db.collection('capsule');
 })();
 
 function getUser(userName) {
-  return userCollection.findOne({ userName: userName });
+  return userCollection.findOne({ username: userName });
 }
 
 async function createCapsule(capsule) {
     await capsuleCollection.insertOne(capsule);
+}
+
+function getCapsules(userName) {
+    return capsuleCollection.find({ username: userName });
 }
 
 function getUserByToken(token) {
@@ -39,5 +43,6 @@ module.exports = {
   getUser,
   getUserByToken,
   addUser,
-  createCapsule
+  createCapsule,
+  getCapsules
 };

@@ -16,7 +16,7 @@ import { LoggedIn } from './logged_in/logged_in';
 import { LoggedOut } from './logged_out/logged_out';
 
 export default function App() {
-  const [usernameApp, setUsernameApp] = React.useState(localStorage.getItem('user') || null);
+  const [usernameApp, setUsernameApp] = React.useState(null);
   const [date, setDate] = React.useState(null);
   const [journal, setJournal] = React.useState(null);
   const [title, setTitle] = React.useState(null);

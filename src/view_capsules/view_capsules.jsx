@@ -8,11 +8,31 @@ export function ViewCapsules({usernameApp}) {
   
 
   React.useEffect(() => {
+    get_capsules();
     const capsulesText = localStorage.getItem(usernameApp);
     if (capsulesText) {
       setCapsules(JSON.parse(capsulesText));
     }
   }, []);
+
+  async function get_capsules() {
+    const user = usernameApp;
+    const res = await fetch('/api/get_capsules', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json' },
+        body: JSON.stringify({user}),
+    });
+    await res.json();
+    if (res.ok) {
+        console.log('success');
+        setCapsules(res.body.user_capsules);
+    }
+    else {
+        setCapsules([]);
+        alert('Failed to get capsules');
+        // setUsernameApp(null);
+    }
+}
 
   // Returns true if date passed in is earlier than current date
   function compareTime(time1) {

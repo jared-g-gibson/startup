@@ -24,10 +24,11 @@ export function Login({setUsernameApp}) {
   }
 
   async function authenticateUser() {
+    const username = usernameLogin;
     const res = await fetch('/api/auth/login', {
         method: 'POST',
         headers: {'Content-Type': 'application/json' },
-        body: JSON.stringify({usernameLogin, password}),
+        body: JSON.stringify({username, password}),
     });
     await res.json();
     if (res.ok) {

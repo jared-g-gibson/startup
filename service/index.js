@@ -6,10 +6,12 @@ const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const uuid = require('uuid');
 app.use(express.json());
+const DB = require('./database.js');
+
 
 let users = [];
 let scores = [];
-let capsules = {};
+let capsules = [];
 
 let total_capsules = 0;
 
@@ -23,6 +25,19 @@ app.use(express.static('public'));
 app.get('/', (_req, res) => {
   res.send({ msg: 'Simon service' });
 });
+
+// Create a capsule
+apiRouter.post('/create_capsule', async (req, res) => {
+  const capsule = {
+    user: req.body.user,
+    title: req.body.title,
+    date: req.body.date, 
+    journal: req.body.journal
+  }
+  
+  DB.createCapsule(capsule);
+  res.send({capsule: capsule});
+})
 
 // CreateAuth a new user
 apiRouter.post('/auth/create', async (req, res) => {

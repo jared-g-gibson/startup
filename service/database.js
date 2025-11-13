@@ -3,9 +3,10 @@ const config = require('./dbConfig.json');
 
 const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
 const client = new MongoClient(url);
-const db = client.db('simon');
+const db = client.db('startup');
 const userCollection = db.collection('user');
 const scoreCollection = db.collection('score');
+const capsuleCollection = db.collection('capsule');
 
 // This will asynchronously test the connection and exit the process if it fails
 (async function testConnection() {
@@ -22,6 +23,10 @@ function getUser(userName) {
   return userCollection.findOne({ userName: userName });
 }
 
+async function createCapsule(capsule) {
+    await capsuleCollection.insertOne(capsule);
+}
+
 function getUserByToken(token) {
   return userCollection.findOne({ token: token });
 }
@@ -34,4 +39,5 @@ module.exports = {
   getUser,
   getUserByToken,
   addUser,
+  createCapsule
 };

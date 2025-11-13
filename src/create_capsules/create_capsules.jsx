@@ -7,7 +7,25 @@ export function CreateCapsules({usernameApp}) {
   const [journal, setJournal] = React.useState("");
   const [date, setDate] = React.useState("");
 
-  
+  async function create_capsule() {
+    const user = usernameApp;
+    const res = await fetch('/api/create_capsule', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json' },
+        body: JSON.stringify({user, title, journal, date}),
+    });
+    await res.json();
+    if (res.ok) {
+        navigate('/post_login');
+        console.log('success');
+        // localStorage.setItem('user', usernameLogin);
+        // setUsernameApp(usernameLogin);
+    }
+    else {
+        alert('Failed to create capsule');
+        // setUsernameApp(null);
+    }
+}
 
   function titleChanged(e) {
     setTitle(e.target.value);
@@ -39,6 +57,7 @@ export function CreateCapsules({usernameApp}) {
     };
     capsules.push(myJSONObject);
     localStorage.setItem(usernameApp, JSON.stringify(capsules));
+    create_capsule();
   }
 
   return (

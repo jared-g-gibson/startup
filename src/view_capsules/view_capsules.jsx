@@ -9,23 +9,23 @@ export function ViewCapsules({usernameApp}) {
 
   React.useEffect(() => {
     get_capsules();
-    const capsulesText = localStorage.getItem(usernameApp);
-    if (capsulesText) {
-      setCapsules(JSON.parse(capsulesText));
-    }
+    console.log("I am in use effect of view capsules. here is capsules: ", capsules);
   }, []);
 
   async function get_capsules() {
     const user = usernameApp;
+    console.log(user);
     const res = await fetch('/api/get_capsules', {
         method: 'POST',
         headers: {'Content-Type': 'application/json' },
         body: JSON.stringify({user}),
     });
-    await res.json();
+    const data = await res.json();
     if (res.ok) {
         console.log('success');
-        setCapsules(res.body.user_capsules);
+        console.log("data in view capsules", data);
+        setCapsules(data.user_capsules);
+        console.log("In Get Capsules: ", capsules);
     }
     else {
         setCapsules([]);
@@ -59,7 +59,7 @@ export function ViewCapsules({usernameApp}) {
 
   var capsuleRows = [];
   console.log(capsules);
-  if (capsules.length) {
+  if (capsules && capsules.length) {
     for (const [i, capsule] of capsules.entries()) {
         capsuleRows.push(
             <tr key='i'>

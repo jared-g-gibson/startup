@@ -5,7 +5,6 @@ const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostna
 const client = new MongoClient(url);
 const db = client.db('startup');
 const userCollection = db.collection('user');
-const scoreCollection = db.collection('score');
 const capsuleCollection = db.collection('capsule');
 
 // This will asynchronously test the connection and exit the process if it fails
@@ -27,8 +26,10 @@ async function createCapsule(capsule) {
     await capsuleCollection.insertOne(capsule);
 }
 
-function getCapsules(userName) {
-    return capsuleCollection.find({ username: userName });
+async function getCapsules(userName) {
+  const capsules = await capsuleCollection.find({ user: userName }).toArray();
+  console.log("In database ", capsules);
+  return capsules;
 }
 
 function getUserByToken(token) {

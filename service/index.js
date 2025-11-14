@@ -42,22 +42,23 @@ apiRouter.post('/create_capsule', async (req, res) => {
 
 // Get Capsules for a user
 apiRouter.post('/get_capsules', async (req, res) => {
-  const user_capsules = getCapsules(req.body.user);
-  res.send(user_capsules);
+  const user_capsules = await getCapsules(req.body.user);
+  res.send({ user_capsules: user_capsules });
 });
 
-function getCapsules(user) {
-  const user_capsules = DB.getCapsules(user);
-  const user_capsules_fixed = [];
-  for(let i = 0; i < user_capsules.length; i++) {
-    let capsule = {
-      title: user_capsules[i][title],
-      date: user_capsules[i][date],
-      journal: user_capsules[i][journal]
-    };
-    user_capsules_fixed.push(capsule);
-  }
-  return user_capsules_fixed.toArray();
+async function getCapsules(user) {
+  const my_user_capsules = await DB.getCapsules(user);
+  // const user_capsules = my_user_capsules;
+  // const user_capsules_fixed = [];
+  // for(let i = 0; i < user_capsules.length; i++) {
+  //   let capsule = {
+  //     title: user_capsules[i][title],
+  //     date: user_capsules[i][date],
+  //     journal: user_capsules[i][journal]
+  //   };
+  //   user_capsules_fixed.push(capsule);
+  // }
+  return my_user_capsules;
 }
 
 // CreateAuth a new user

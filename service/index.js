@@ -7,10 +7,10 @@ const bcrypt = require('bcryptjs');
 const uuid = require('uuid');
 app.use(express.json());
 const DB = require('./database.js');
+const { peerProxy } = require('./peerProxy.js');
 
 
 let users = [];
-let scores = [];
 let capsules = [];
 
 let total_capsules = 0;

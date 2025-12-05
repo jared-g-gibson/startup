@@ -57,7 +57,7 @@ export default function App() {
 
             <Routes>
                 <Route path='/' element={<Login setUsernameApp={setUsernameApp}/>} exact />
-                <Route path='/collaborate' element={<Collaborate />} />
+                <Route path='/collaborate' element={<Collaborate usernameApp={usernameApp}/>} />
                 <Route path='/create_account' element={<CreateAccount />} />
                 <Route path='/create_capsules' element={<CreateCapsules usernameApp={usernameApp}/>} />
                 <Route path='/info' element={<Info />} />

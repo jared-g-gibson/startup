@@ -47,13 +47,26 @@ function Message({ name, webSocket }) {
     setMessage('');
   }
 
-  const disabled = name === '' || !webSocket.connected;
+  // const disabled = name === '' || !webSocket.connected;
+  // return (
+  //   <main>
+  //     <fieldset id='chat-controls'>
+  //       <legend>Chat</legend>
+  //       <input disabled={disabled} onKeyDown={(e) => doneMessage(e)} value={message} onChange={(e) => setMessage(e.target.value)} type='text' />
+  //       <button disabled={disabled || !message} onClick={sendMsg}>
+  //         Send
+  //       </button>
+  //     </fieldset>
+  //   </main>
+  // );
+
+  const disabled = !webSocket.connected;
   return (
     <main>
       <fieldset id='chat-controls'>
         <legend>Chat</legend>
-        <input disabled={disabled} onKeyDown={(e) => doneMessage(e)} value={message} onChange={(e) => setMessage(e.target.value)} type='text' />
-        <button disabled={disabled || !message} onClick={sendMsg}>
+        <input onKeyDown={(e) => doneMessage(e)} value={message} onChange={(e) => setMessage(e.target.value)} type='text' />
+        <button onClick={sendMsg}>
           Send
         </button>
       </fieldset>

@@ -1,35 +1,38 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import './collaborate.css';
+
 
 export function Collaborate({usernameApp}) {
+  const [webSocket] = React.useState(() => new ChatClient());
   return (
     <main>
         {/*This is a websocket interaction*/}
-        <Chat webSocket={new ChatClient()} usernameApp={usernameApp}/>
-        {/* <h2 className="text">Social Page</h2>
-        <form>
-            <p className="text">Connect with friend: 
-                <input type="text" placeholder="Type their name here"/> 
-                <input type="submit"/></p>        
-        </form> */}
-        {/* <p className="text">View friend requests:</p>
-        <p className="text">Jake</p>
-        <br/>
-        <p className="text">View friend's capsules:</p>
-        <p className="text"><NavLink to="/under_construction">Eli's Trip</NavLink></p> */}
+        <Chat webSocket={webSocket} />
     </main>
   );
 }
 
-function Chat({ webSocket, usernameApp }) {
-  const [name, setName] = React.useState(usernameApp);
+function Chat({ webSocket }) {
+  const [name, setName] = React.useState('');
 
   return (
     <div>
+      <Name updateName={setName} />
       <Message name={name} webSocket={webSocket} />
       <Conversation webSocket={webSocket} />
     </div>
+  );
+}
+
+function Name({ updateName }) {
+  return (
+    <main>
+      <div className='name'>
+        <fieldset id='name-controls'>
+          <legend>My Name</legend>
+          <input onChange={(e) => updateName(e.target.value)} id='my-name' type='text' />
+        </fieldset>
+      </div>
+    </main>
   );
 }
 
@@ -47,26 +50,13 @@ function Message({ name, webSocket }) {
     setMessage('');
   }
 
-  // const disabled = name === '' || !webSocket.connected;
-  // return (
-  //   <main>
-  //     <fieldset id='chat-controls'>
-  //       <legend>Chat</legend>
-  //       <input disabled={disabled} onKeyDown={(e) => doneMessage(e)} value={message} onChange={(e) => setMessage(e.target.value)} type='text' />
-  //       <button disabled={disabled || !message} onClick={sendMsg}>
-  //         Send
-  //       </button>
-  //     </fieldset>
-  //   </main>
-  // );
-
-  const disabled = !webSocket.connected;
+  const disabled = name === '' || !webSocket.connected;
   return (
     <main>
       <fieldset id='chat-controls'>
         <legend>Chat</legend>
-        <input onKeyDown={(e) => doneMessage(e)} value={message} onChange={(e) => setMessage(e.target.value)} type='text' />
-        <button onClick={sendMsg}>
+        <input disabled={disabled} onKeyDown={(e) => doneMessage(e)} value={message} onChange={(e) => setMessage(e.target.value)} type='text' />
+        <button disabled={disabled || !message} onClick={sendMsg}>
           Send
         </button>
       </fieldset>
@@ -139,5 +129,104 @@ class ChatClient {
   }
 }
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(<Chat webSocket={new ChatClient()} />);
+// import React from 'react';
+// import { NavLink } from 'react-router-dom';
+// import './collaborate.css';
+// import { ChatClient } from './chatClient.js';
+
+// const Client = new ChatClient();
+
+// export function Collaborate({usernameApp}) {
+//   return (
+//     <main>
+//         {/*This is a websocket interaction*/}
+//         <Chat webSocket={Client} />
+//     </main>
+//   );
+// }
+
+// function Chat({ webSocket }) {
+//   const [name, setName] = React.useState('');
+
+//   return (
+//     <div>
+//       <Name updateName={setName} />
+//       <Message name={name} webSocket={webSocket} />
+//       <Conversation webSocket={webSocket} />
+//     </div>
+//   );
+// }
+
+// function Name({ updateName }) {
+//   return (
+//     <main>
+//       <div className='name'>
+//         <fieldset id='name-controls'>
+//           <legend>My Name</legend>
+//           <input onChange={(e) => updateName(e.target.value)} id='my-name' type='text' />
+//         </fieldset>
+//       </div>
+//     </main>
+//   );
+// }
+
+// function Message({ name, webSocket }) {
+//   const [message, setMessage] = React.useState('');
+
+//   function doneMessage(e) {
+//     if (e.key === 'Enter') {
+//       sendMsg();
+//     }
+//   }
+
+//   function sendMsg() {
+//     webSocket.sendMessage(name, message);
+//     setMessage('');
+//   }
+
+//   return (
+//     <main>
+//       <fieldset id='chat-controls'>
+//         <legend>Chat</legend>
+//         <input onKeyDown={(e) => doneMessage(e)} value={message} onChange={(e) => setMessage(e.target.value)} type='text' />
+//         <button onClick={sendMsg}>
+//           Send
+//         </button>
+//       </fieldset>
+//     </main>
+//   );
+
+//   // const disabled = !webSocket.connected;
+//   // return (
+//   //   <main>
+//   //     <fieldset id='chat-controls'>
+//   //       <legend>Chat</legend>
+//   //       <input disabled={disabled} onKeyDown={(e) => doneMessage(e)} value={message} onChange={(e) => setMessage(e.target.value)} type='text' />
+//   //       <button onClick={sendMsg}>
+//   //         Send
+//   //       </button>
+//   //     </fieldset>
+//   //   </main>
+//   // );
+// }
+
+// function Conversation({ webSocket }) {
+//   const [chats, setChats] = React.useState([]);
+//   React.useEffect(() => {
+//     webSocket.addObserver((chat) => {
+//       setChats((prevMessages) => [...prevMessages, chat]);
+//     });
+//   }, [webSocket]);
+
+//   const chatEls = chats.map((chat, index) => (
+//     <div key={index}>
+//       <span className={chat.event}>{chat.from}</span> {chat.msg}
+//     </div>
+//   ));
+
+//   return (
+//     <main>
+//       <div id='chat-text'>{chatEls}</div>
+//     </main>
+//   );
+// }

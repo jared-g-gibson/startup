@@ -7,8 +7,8 @@ const bcrypt = require('bcryptjs');
 const uuid = require('uuid');
 app.use(express.json());
 const DB = require('./database.js');
+const { WebSocket, WebSocketServer } = require('ws');
 const { peerProxy } = require('./peerProxy.js');
-
 
 let users = [];
 let capsules = [];
@@ -148,8 +148,40 @@ function setAuthCookie(res, authToken) {
   });
 }
 
-const httpService = app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
 
-peerProxy(httpService);
+// // Create a websocket object
+// const socketServer = new WebSocketServer({ server });
+
+// socketServer.on('connection', (socket) => {
+//   console.log("Websocket connection was successful.");
+//   socket.isAlive = true;
+
+//   // Forward messages to everyone except the sender
+//   socket.on('message', function message(data) {
+//     socketServer.clients.forEach(function each(client) {
+//       if (client !== socket && client.readyState === WebSocket.OPEN) {
+//         client.send(data);
+//       }
+//     });
+//   });
+
+//   // Respond to pong messages by marking the connection alive
+//   socket.on('pong', () => {
+//     socket.isAlive = true;
+//   });
+// });
+
+// // Periodically send out a ping message to make sure clients are alive
+// setInterval(() => {
+//   socketServer.clients.forEach(function each(client) {
+//     if (client.isAlive === false) return client.terminate();
+
+//     client.isAlive = false;
+//     client.ping();
+//   });
+// }, 10000);
+
+peerProxy(server);

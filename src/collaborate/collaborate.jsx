@@ -6,18 +6,17 @@ export function Collaborate({usernameApp}) {
   return (
     <main>
         {/*This is a websocket interaction*/}
-        <Chat webSocket={webSocket} />
+        <Chat webSocket={webSocket} usernameApp={usernameApp}/>
     </main>
   );
 }
 
-function Chat({ webSocket }) {
-  const [name, setName] = React.useState('');
+function Chat({ webSocket, usernameApp }) {
 
   return (
     <div>
-      <Name updateName={setName} />
-      <Message name={name} webSocket={webSocket} />
+      {/* <Name updateName={setName} /> */}
+      <Message name={usernameApp} webSocket={webSocket} />
       <Conversation webSocket={webSocket} />
     </div>
   );
@@ -55,8 +54,8 @@ function Message({ name, webSocket }) {
     <main>
       <fieldset id='chat-controls'>
         <legend>Chat</legend>
-        <input disabled={disabled} onKeyDown={(e) => doneMessage(e)} value={message} onChange={(e) => setMessage(e.target.value)} type='text' />
-        <button disabled={disabled || !message} onClick={sendMsg}>
+        <input onKeyDown={(e) => doneMessage(e)} value={message} onChange={(e) => setMessage(e.target.value)} type='text' />
+        <button onClick={sendMsg}>
           Send
         </button>
       </fieldset>
